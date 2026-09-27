@@ -1,0 +1,35 @@
+{
+  "name": "morphix",
+  "version": "0.4.0",
+  "description": "Morphix — the complete avatar platform for developers. Supabase-backed.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "start": "node server.js",
+    "test": "node scripts/test-mapping-roundtrip.js && node scripts/test-storage-safety.js && node scripts/test-session-durability.js",
+    "db:seed": "node --env-file=.env scripts/seed-dev-users.js",
+    "db:migrate": "node --env-file=.env scripts/migrate-local-to-supabase.js",
+    "db:status": "node --env-file=.env scripts/db-status.js",
+    "test:session": "node scripts/test-session-durability.js"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "fake-indexeddb": "^6.2.5",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.1",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "idb": "^8.0.3",
+    "puppeteer": "^25.12.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "supabase": "^2.117.0"
+  },
+  "main": "server.js",
+  "license": "ISC"
+}
